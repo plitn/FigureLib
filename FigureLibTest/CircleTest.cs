@@ -8,6 +8,9 @@ namespace FigureLibTest;
 public class CircleTest
 {
 
+    /// <summary>
+    /// Проверяем, упадет ли эксепшн, при отрицательном радиусе
+    /// </summary>
     [Test]
     public void Constructor_NegativeRadius_ArgumentException()
     {
@@ -16,6 +19,9 @@ public class CircleTest
         Assert.That(ex.Message, Is.EqualTo("Отрицательный радиус круга"));
     }
 
+    /// <summary>
+    /// Проверяем, считается ли площадь при нулевом радиусе
+    /// </summary>
     [Test]
     public void GetSquare_ZeroRadius_ZeroSquare()
     {
@@ -23,6 +29,9 @@ public class CircleTest
         Assert.That(c.GetSquare(), Is.EqualTo(0d));
     }
 
+    /// <summary>
+    /// Проверяем формулу площади
+    /// </summary>
     [Test]
     public void GetSquare_RandomDoubleRadius_Square()
     {

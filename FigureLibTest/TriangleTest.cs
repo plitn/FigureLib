@@ -7,6 +7,9 @@ namespace FigureLibTest;
 [TestFixture]
 public class TriangleTest
 {
+    /// <summary>
+    /// Проверяем, упадет ли эксепшн при отрицательной A стороне
+    /// </summary>
     [Test]
     public void Constructor_NegativeASide_Exception()
     {
@@ -15,6 +18,9 @@ public class TriangleTest
         Assert.That(ex.Message, Is.EqualTo("Сторона меньше нуля (Parameter 'aSide')"));
     }
     
+    /// <summary>
+    /// Проверяем, упадет ли эксепшн при отрицательной B стороне
+    /// </summary>
     [Test]
     public void Constructor_NegativeBSide_Exception()
     {
@@ -23,6 +29,9 @@ public class TriangleTest
         Assert.That(ex.Message, Is.EqualTo("Сторона меньше нуля (Parameter 'bSide')"));
     }
     
+    /// <summary>
+    /// Проверяем, упадет ли эксепшн при отрицательной C стороне
+    /// </summary>
     [Test]
     public void Constructor_NegativeCSide_Exception()
     {
@@ -31,6 +40,9 @@ public class TriangleTest
         Assert.That(ex.Message, Is.EqualTo("Сторона меньше нуля (Parameter 'cSide')"));
     }
     
+    /// <summary>
+    /// Проверяем, упадет ли эксепшн при всех отрицательных сторонах
+    /// </summary>
     [Test]
     public void Constructor_NegativeAllSides_Exception()
     {
@@ -39,6 +51,9 @@ public class TriangleTest
         Assert.That(ex.Message, Is.EqualTo("Сторона меньше нуля (Parameter 'aSide')"));
     }
 
+    /// <summary>
+    /// Проверяем, упадет ли эксепшн, если треугольника не существует
+    /// </summary>
     [Test]
     public void Constructor_DoesntExistTriangle_Exception()
     {
@@ -47,6 +62,9 @@ public class TriangleTest
         Assert.That(ex.Message, Is.EqualTo("Треугольника с такими сторонами не существует"));
     }
 
+    /// <summary>
+    /// Проверяем, будет ли прямоугольным прямоугольный треугольник
+    /// </summary>
     [Test]
     public void IsRight_RightTriangle_True()
     {
@@ -54,6 +72,9 @@ public class TriangleTest
         Assert.That(tr.IsRight, Is.EqualTo(true));
     }
 
+    /// <summary>
+    /// Проверяем, будет ли прямоугольным рандомный треугольник
+    /// </summary>
     [Test]
     public void IsRight_SimpleTriangle_False()
     {
@@ -61,6 +82,9 @@ public class TriangleTest
         Assert.That(tr.IsRight, Is.EqualTo(false));
     }
 
+    /// <summary>
+    /// Проверяем подсчет площади треугольника
+    /// </summary>
     [Test]
     public void GetSquare_SimpleTriangle_Square()
     {
