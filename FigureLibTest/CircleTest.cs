@@ -14,8 +14,8 @@ public class CircleTest
     [Test]
     public void Constructor_NegativeRadius_ArgumentException()
     {
-        Circle c;
-        var ex = Assert.Throws<ArgumentException>(() => c = new Circle(-10));
+        Circle circle;
+        var ex = Assert.Throws<ArgumentException>(() => circle = new Circle(-10));
         Assert.That(ex.Message, Is.EqualTo("Отрицательный радиус круга"));
     }
 
@@ -25,8 +25,8 @@ public class CircleTest
     [Test]
     public void GetSquare_ZeroRadius_ZeroSquare()
     {
-        Circle c = new Circle(0);
-        Assert.That(c.GetSquare(), Is.EqualTo(0d));
+        Circle circle = new Circle(0);
+        Assert.That(circle.GetSquare(), Is.EqualTo(0d));
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ public class CircleTest
     public void GetSquare_RandomDoubleRadius_Square()
     {
         double radius = 14.453;
-        Circle c = new Circle(radius);
-        Assert.That(c.GetSquare(), Is.EqualTo(Math.PI * Math.Pow(14.453, 2)));
+        Circle circle = new Circle(radius);
+        Assert.That(circle.GetSquare(), Is.EqualTo(Math.PI * Math.Pow(14.453, 2)));
     }
 }

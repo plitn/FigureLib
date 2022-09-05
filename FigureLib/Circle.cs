@@ -2,7 +2,7 @@
 
 public class Circle : IFigure
 {
-    public  double Radius { get; set; }
+    private  double Radius { get; set; }
 
     /// <summary>
     /// Конструктор Круга

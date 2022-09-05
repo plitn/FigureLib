@@ -2,10 +2,10 @@
 
 public class Triangle : IFigure
 {
-    public double ASide { get; }
-    public double BSide { get; }
-    public double CSide { get; }
-    private double perimeter;
+    private double ASide { get; }
+    private double BSide { get; }
+    private double CSide { get; }
+    private double halfPerimeter;
 
     /// <summary>
     /// Конструктор фигуры треугольник
@@ -42,12 +42,12 @@ public class Triangle : IFigure
         ASide = aSide;
         BSide = bSide;
         CSide = cSide;
-        this.perimeter = (ASide + BSide + CSide) / 2d;
+        this.halfPerimeter = (ASide + BSide + CSide) / 2d;
     }
     
     public double GetSquare()
     {
-        return Math.Sqrt(perimeter * (perimeter - ASide) * (perimeter - BSide) * (perimeter - CSide));
+        return Math.Sqrt(halfPerimeter * (halfPerimeter - ASide) * (halfPerimeter - BSide) * (halfPerimeter - CSide));
     }
 
     /// <summary>
